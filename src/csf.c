@@ -307,6 +307,8 @@ static void p_mk_outerptr(
       } else {
         pt->fids[0] = NULL;
       }
+      // pt->fids[0] = splatt_malloc(nfibs * sizeof(**(pt->fids)));
+      //pt->fids[0][0] = ttind[0];
 
 
       pt->fptr[0][0] = 0;
@@ -626,6 +628,10 @@ static void p_mk_csf(
 
   /* get the indices in order */
   csf_find_mode_order(tt->dims, tt->nmodes, mode_type, mode, ct->dim_perm);
+  /// Hack! We need to set dim_perm to the identity permutation
+  for (int i = 0 ; i < tt->nmodes ; i++) {
+    ct->dim_perm[i] = i;
+  }
   p_fill_dim_iperm(ct);
 
   ct->which_tile = splatt_opts[SPLATT_OPTION_TILE];

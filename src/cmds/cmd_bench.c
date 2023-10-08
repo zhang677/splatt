@@ -74,7 +74,7 @@ static struct argp_option bench_options[] = {
   {"iters", 'i', "NITERS", 0, "number of iterations to use (default: 5)"},
   {"mode", 'm', "MODE", 0, "mode basis for hgraph reordering (default: 1)"},
   {"threads", 't', "NTHREADS", 0, "number of threads to use (default: 1)"},
-  {"rank", 'r', "RANK", 0, "rank of decomposition to find (default: 10)"},
+  {"rank", 'r', "RANK", 0, "rank of decomposition to find (default: 10)"}, // column number of dense matrix
   {"scale", 's', 0, 0, "scale threads from 1 to NTHREADS (by 2)"},
   {"tile", TT_TILE, 0, 0, "use tiling during SPLATT"},
   {"write", 'w', 0, 0, "write results to files ALG_mode<N>.mat (for testing)"},
